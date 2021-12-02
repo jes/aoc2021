@@ -7,3 +7,4 @@ And I'm using my homemade programming language "SLANG". It's a bit like C but wi
 Videos:
 
  * Day 1: https://www.youtube.com/watch?v=ZLF8bWWw9FA
+ * Day 2: https://www.youtube.com/watch?v=gWrsWmDUM4U
