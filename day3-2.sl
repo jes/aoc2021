@@ -42,9 +42,7 @@ var process = func(arr, n, ox, bit) {
 	};
 
 	r = process(newarr, newn, ox, shr(bit,1));
-
 	free(newarr);
-
 	return r;
 };
 
