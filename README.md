@@ -9,3 +9,4 @@ Videos:
  * Day 1: https://www.youtube.com/watch?v=ZLF8bWWw9FA
  * Day 2: https://www.youtube.com/watch?v=gWrsWmDUM4U
  * Day 3: https://www.youtube.com/watch?v=g0jeUofniLk
+ * Day 4: https://www.youtube.com/watch?v=gDyp_-5GWhg
