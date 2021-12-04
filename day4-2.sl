@@ -51,7 +51,7 @@ while (bscanf(in, "%d", [&ball])) {
 	i = 0;
 	
 	k = 0;
-	while (i < inputlen) {
+	while (i < 100) {
 		j = 0;
 		j5 = 0;
 		while (j < 5) {
