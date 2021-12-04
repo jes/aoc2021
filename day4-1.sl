@@ -44,7 +44,7 @@ while (bscanf(in, "%d", [&ball])) {
 	got[ball] = 1;
 	i = 0;
 	
-	while (i < 100) {
+	while (i < inputlen) {
 		j = 0;
 		j5 = 0;
 		while (j < 5) {
