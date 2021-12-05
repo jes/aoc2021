@@ -1,7 +1,7 @@
 include "bufio.sl";
 
 var args = cmdargs()+1;
-assert(*args, "usage: part1 INPUTNAME", 0);
+assert(*args, "usage: part1 INPUTNAME...", 0);
 
 var in;
 
