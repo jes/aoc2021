@@ -11,7 +11,7 @@ var x2;
 var y2;
 
 var map = malloc(14400);
-var count;
+var count = 0;
 
 var visit = func(x,y) {
 #	printf("visit %d,%d: ", [x,y]);
