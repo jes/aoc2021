@@ -1,14 +1,5 @@
 include "stdio.sl";
 
-var readanswer = func(name) {
-	var fd = open(name, O_READ);
-	assert(fd >= 0, "open %s: %s", [name, strerror(fd)]);
-	var n;
-	fscanf(fd, "%d", [&n]);
-	close(fd);
-	return n;
-};
-
 printf("split input into blocks of 350x350...\n", 0);
 system(["./split", "350", "input"]);
 printf("split each block into blocks of 117x117...\n", 0);
