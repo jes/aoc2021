@@ -1,22 +1,29 @@
-My computer doesn't have enough memory to process all of the input in
-one go, even if we use a hash table as a "sparse 2d array".
+Wow. Today was tough. My computer only has 64 Kwords of memory, and
+the combined length of the lines from the input was about 190k points,
+so even with the sparsest of sparse 2d arrays, I just have no way to
+represent every point in memory at the same time. This is a big problem.
 
-So my next plan was to iterate over every pair of lines and only plot
-the intersections in the sparse 2d array, but that was going to take
-too many hours to complete.
+So my next plan was to iterate over every pair of lines (O(n^2), but what
+can you do?) and only plot the intersections in the sparse 2d array in
+memory, but that was going to take too many hours to complete.
 
-Ben suggested splitting the input into smaller grids and processing them
-individually. This is a great idea.
+My friend Ben suggested splitting the input into smaller grids and
+processing them individually. This is a great idea.
 
 So I wrote a program to split the input into 3x3 subgrids and then tried
-to solve these individually. It still ran out of memory because it's still
-too large.
+to solve these individually. It still ran out of memory because it's
+still too large.
 
 My kernel doesn't give you enough file descriptors to open more than about
-10 files at a time, so the solution is to do a first pass that splits the
+10 files at a time, so my solution was to do a first pass that splits the
 input into 3x3 subgrids, and then run a 2nd pass over each of the subgrids
 splitting them into a further 3x3 subgrids, for 9x9 subgrids overall,
 and then run part1 and part2 over each subgrid consecutively. This works
-but it took me at least 6 hours of work.
+and completes in about 20 minutes total for the entire pipeline, but it
+took me at least 6 hours of work.
 
 There's no video today because it was so chaotic and time-consuming.
+
+Interestingly the program to split the input into subgrids was a lot
+more complicated to get right than the part1 and part2 programs that
+solved the subgrids were!
