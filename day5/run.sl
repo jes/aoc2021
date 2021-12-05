@@ -32,8 +32,8 @@ while (y < 9) {
 	y++;
 };
 partargs[i] = 0;
-printf("run part1 on all 81 inputs...\n", 0);
 partargs[0] = "./part1";
+printf("run part1 on all 81 inputs...\n", 0);
 system(partargs);
 partargs[0] = "./part2";
 printf("run part2 on all 81 inputs...\n", 0);
