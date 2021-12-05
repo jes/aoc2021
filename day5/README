@@ -8,6 +8,10 @@ too many hours to complete.
 Ben suggested splitting the input into smaller grids and processing them
 individually. This is a great idea.
 
+So I wrote a program to split the input into 3x3 subgrids and then tried
+to solve these individually. It still ran out of memory because it's still
+too large.
+
 My kernel doesn't give you enough file descriptors to open more than about
 10 files at a time, so the solution is to do a first pass that splits the
 input into 3x3 subgrids, and then run a 2nd pass over each of the subgrids
