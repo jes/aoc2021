@@ -7,12 +7,10 @@ if (*args) ndays = atoi(*args);
 
 var in = bfdopen(0, O_READ);
 
-var numfish = malloc(9);
-var numfish2 = malloc(9);
+var numfish = malloc(10);
 var i;
-while (i < 9) {
+while (i < 10) {
 	numfish[i] = bignew(0);
-	numfish2[i] = bignew(0);
 	i++;
 };
 
@@ -24,17 +22,15 @@ while (bscanf(in, "%d", [&n])) {
 var day = 0;
 var p;
 while (day < ndays) {
+	bigset(numfish[9], numfish[0]);
+	bigadd(numfish[7], numfish[0]);
+
 	i = 1;
-	while (i != 9) {
-		bigset(numfish2[i-1], numfish[i]);
+	while (i != 10) {
+		bigset(numfish[i-1], numfish[i]);
 		i++;
 	};
-	bigset(numfish2[8], numfish[0]);
-	bigadd(numfish2[6], numfish[0]);
 
-	p = numfish;
-	numfish = numfish2;
-	numfish2 = p;
 	day++;
 };
 
