@@ -34,8 +34,8 @@ var diag = func(x1,y1,x2,y2) {
 	var dy = y2-y1;
 	var t;
 	if (dx < 0) {
-		t = x1; x1 = x2; x2 = t;
-		t = y1; y1 = y2; y2 = t;
+		swap(&x1, &x2);
+		swap(&y1, &y2);
 	};
 	# now we know x increases from x1 to x2, but
 	# y can increase or decrease as we move right
@@ -93,7 +93,7 @@ var diag = func(x1,y1,x2,y2) {
 
 var _horiz = func(x1, x2, y, cb) {
 	var t;
-	if (x1 > x2) { t = x1; x1 = x2; x2 = t; };
+	if (x1 > x2) swap(&x1, &x2);
 	var cell1 = div(x1, cellsize);
 	var cell2 = div(x2, cellsize)+1;
 	var c = cell1;
