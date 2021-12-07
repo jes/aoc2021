@@ -39,7 +39,6 @@ sort(crabs, ncrabs, func(a,b) {
 
 var mid = div(ncrabs, 2);
 var f = func(x) {
-	var c = fuelcost(crabs[x]);
-	printf("at %d, cost=0x%04x%04x\n", [crabs[x], c[1], c[0]]);
+	printf("at %d, cost=%b\n", [crabs[x], fuelcost(crabs[x])]);
 };
 f(mid-1); f(mid); f(mid+1);
