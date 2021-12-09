@@ -45,7 +45,6 @@ var scanbasin = func(x,y) {
 
 y = 1;
 var g;
-var sz;
 var sizes = grnew();
 while (y != height-1) {
 	x = 1;
