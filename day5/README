@@ -27,3 +27,30 @@ There's no video today because it was so chaotic and time-consuming.
 Interestingly the program to split the input into subgrids was a lot
 more complicated to get right than the part1 and part2 programs that
 solved the subgrids were!
+
+---
+
+part1-simon.sl is a superior solution written by
+https://github.com/Simon816 that doesn't require splitting the input up
+into 81 parts! Here's his explanation:
+
+This only applies to part 1 where only horizontal and vertical lines
+are considered. Probably not too hard to expand to diagonals too.
+
+* All lines fit within 1000x1000 so we can have a fixed bound to iterate
+  over.
+* Sort all lines by ascending x1 value in a "line queue".
+* Create a 1000 element list to store line "traces" for all possible y
+  positions.
+* Iterate along the x axis from 0->1000.
+* Pop lines off the line queue if their x1 value equals the current x.
+* For each y coordinate of the line (from min(y1, y2) to max(y1, y2)),
+  push x2 to the traces list for that y coordinate.
+* The traces list is essentially a list of end x coordinates of "active"
+  lines along the y axis.
+* The number of elements in the trace gives the number of intersections
+  which we can easily count.
+* If any lines end at our current x coordinate, remove from the list.
+
+So essentially we take a 1d slice for every x value and count the number
+of intersections in that slice.
