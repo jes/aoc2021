@@ -48,7 +48,7 @@ var g;
 var sz;
 var sizes = grnew();
 while (y != height-1) {
-	x = 0;
+	x = 1;
 	while (x != width-1) {
 		g = grid[y][x];
 		if ((g < grid[y-1][x]) && (g < grid[y+1][x]) && (g < grid[y][x-1]) && (g < grid[y][x+1])) {
