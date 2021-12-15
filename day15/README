@@ -1,0 +1,12 @@
+Today's part 2 problem is too big to fit in RAM.
+
+It consists of a 100x100 grid, which is tiled to 5x5 in total, creating a 500x500
+grid, but each tiling changes the numbers slightly such that the shortest path
+changes.
+
+My current plan is to use Floyd-Warshall (all-pairs shortest path) to solve
+all 9 of the possible 100x100 grids that can be tiled,
+store these solutions in some format that gives me the shortest path from any
+point on the perimeter to any other point on the perimeter, and then stitch the
+25 "perimeter-only" grids together into a graph of 10k (or 6k using Ben's scheme)
+nodes that can then be solved in memory.
