@@ -4,9 +4,28 @@ It consists of a 100x100 grid, which is tiled to 5x5 in total, creating a 500x50
 grid, but each tiling changes the numbers slightly such that the shortest path
 changes.
 
-My current plan is to use Floyd-Warshall (all-pairs shortest path) to solve
+My plan was to use Floyd-Warshall (all-pairs shortest path) to solve
 all 9 of the possible 100x100 grids that can be tiled,
 store these solutions in some format that gives me the shortest path from any
 point on the perimeter to any other point on the perimeter, and then stitch the
 25 "perimeter-only" grids together into a graph of 10k (or 6k using Ben's scheme)
 nodes that can then be solved in memory.
+
+(Ben's idea is that since the join between 2 perimeters is just a single edge, you can
+bake the cost of that edge into just 1 node. But maybe not worth it if it makes the
+subsequent graph construction more complicated).
+
+We have 25 grids arranged like this:
+
+0 1 2 3 4
+1 2 3 4 5
+2 3 4 5 6
+3 4 5 6 7
+4 5 6 7 8
+
+Grid number N always has grid number N-1 above and left, so Ben's scheme might work.
+
+But a 100x100 grid has 400 points on its perimeter, so we would have 400x400 values
+in each file = 160k, so this isn't going to work. If we stop double-counting the
+corners, and self paths, and remove reverse paths, then we get 396*395/2 = 78k pairs,
+which is still way too many.
