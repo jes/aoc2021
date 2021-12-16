@@ -42,32 +42,32 @@ var readliteral = func() {
 };
 
 var op = [
-#0: sum
-func(a,b) bigadd(b,a),
-#1: product
-func(a,b) bigmul(b,a),
-#2: min
-func(a,b) {
-	if (bigcmp(a,b) < 0) bigset(b,a);
-},
-#3: max
-func(a,b) {
-	if (bigcmp(a,b) > 0) bigset(b,a);
-},
-#(4: literal)
-0,
-#5: gt
-func (a,b) {
-	bigsetw(b, bigcmp(a,b)>0);
-},
-#6: lt
-func (a,b) {
-	bigsetw(b, bigcmp(a,b)<0);
-},
-#7: =
-func (a,b) {
-	bigsetw(b, bigcmp(a,b)==0);
-}
+    #0: sum
+    func(a,b) bigadd(b,a),
+    #1: product
+    func(a,b) bigmul(b,a),
+    #2: min
+    func(a,b) {
+        if (bigcmp(a,b) < 0) bigset(b,a);
+    },
+    #3: max
+    func(a,b) {
+        if (bigcmp(a,b) > 0) bigset(b,a);
+    },
+    #(4: literal)
+    0,
+    #5: gt
+    func (a,b) {
+        bigsetw(b, bigcmp(a,b)>0);
+    },
+    #6: lt
+    func (a,b) {
+        bigsetw(b, bigcmp(a,b)<0);
+    },
+    #7: =
+    func (a,b) {
+        bigsetw(b, bigcmp(a,b)==0);
+    }
 ];
 
 var readoperator = func(pkttype) {
