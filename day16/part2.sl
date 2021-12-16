@@ -31,12 +31,10 @@ var readpacket;
 var readliteral = func() {
 	var n = bignew(0);
 	var more = 1;
-	var l = 0;
 	while (more) {
 		more = readbit();
 		bigmulw(n,16);
 		bigaddw(n, readint(4));
-		l++;
 	};
 	return n;
 };

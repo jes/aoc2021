@@ -31,11 +31,9 @@ var readpacket;
 var readliteral = func() {
 	var n = 0;
 	var more = 1;
-	var l = 0;
 	while (more) {
 		more = readbit();
 		n = shl(n,4) | readint(4);
-		l++;
 	};
 	return n;
 };
