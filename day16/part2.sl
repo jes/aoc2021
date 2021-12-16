@@ -101,10 +101,8 @@ var readoperator = func(pkttype) {
 	return r;
 };
 
-var sumver = 0;
 readpacket = func() {
 	var version = readint(3);
-	sumver = sumver + version;
 	var type = readint(3);
 
 	if (type == 4) return readliteral()
