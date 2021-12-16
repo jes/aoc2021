@@ -29,3 +29,14 @@ But a 100x100 grid has 400 points on its perimeter, so we would have 400x400 val
 in each file = 160k, so this isn't going to work. If we stop double-counting the
 corners, and self paths, and remove reverse paths, then we get 396*395/2 = 78k pairs,
 which is still way too many.
+
+----
+
+Now I think the best idea is to use the disk to store the visited set and the queue,
+and use most of the "real" memory just as a disk cache.
+
+The kernel doesn't provide random access to files on disk, but we could manually
+allocate however many blocks are needed, copy the cf_blkread/cf_blkwrite functions
+into our program, and read/write the blocks on disk directly.
+
+I think this is one to revisit after December.
