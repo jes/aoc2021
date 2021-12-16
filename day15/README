@@ -33,7 +33,10 @@ which is still way too many.
 ----
 
 Now I think the best idea is to use the disk to store the visited set and the queue,
-and use most of the "real" memory just as a disk cache.
+and use most of the "real" memory just as a disk cache. The visited set can be a
+bit-set of 15626 words, so perhaps it could go in memory. It's not obvious whether
+we'd get more benefit from having the visited set in memory but a smaller cache of
+the queue, or putting them both on disk and having more cache.
 
 The kernel doesn't provide random access to files on disk, but we could manually
 allocate however many blocks are needed, copy the cf_blkread/cf_blkwrite functions
