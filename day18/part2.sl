@@ -57,11 +57,12 @@ var addtoleafr = func(s, n) {
 	return addtoleafr(s[1], n);
 };
 
-var explode = func(s, sptr, l, r, levels) {
+var explode = func(sptr, l, r, levels) {
+    var s = *sptr;
 	if (s lt 0x100) return 0;
 	if (levels > 0) {
-		if (explode(s[0], s+0, l, s+1, levels-1)) return 1;
-		if (explode(s[1], s+1, s+0, r, levels-1)) return 1;
+		if (explode(s+0, l, s+1, levels-1)) return 1;
+		if (explode(s+1, s+0, r, levels-1)) return 1;
 		return 0;
 	};
 
@@ -104,7 +105,7 @@ var split = func(sptr) {
 
 var reduce = func(sptr) {
 	while (1) {
-		if (explode(*sptr, sptr, 0, 0, 4)) continue;
+		if (explode(sptr, 0, 0, 4)) continue;
 		if (split(sptr)) continue;
 		break;
 	};
