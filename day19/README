@@ -1,0 +1,11 @@
+This was by far the hardest yet. The problem itself was very complicated, and I also kept running into conditions where I would run out of memory, and the program was taking far too long.
+
+I start off by considering scanner 0 to be "solved". Once any other scanner is solved, its coordinates are remapped to the same reference frame as scanner 0.
+
+To solve an unsolved scanner A I loop over all solved scanners B that A hasn't been tested against already. For each of the 24 rotations, I loop over all the points in A, and for each of these I loop over all points in B. I work out what offset is required for this point of A to match this point of B, and add this offset to a hash table. If any entry in the hash table has 12 matches then we've found a match. The coordinates of scanner A are now updated to match the reference frame of scanner 0, and we go back and try to solve the next unsolved scanner.
+
+I went to great lengths to cut out repeated work wherever possible and minimise dynamic allocations during the important parts. I ended up writing the hash key function in assembly language since that is effectively the inner loop of my program.
+
+It took me until 10pm yesterday (17 hours after puzzle unlock) to get the program written. The program takes about 3 hours to run on real hardware, so it didn't finish until after I'd gone to sleep. Unfortunately I made a one-character typo in specifying my rotations, which meant that when I got up today it hadn't found any solution. I fixed the typo and ran the program in the emulator which is 20x faster, and this got the correct solution. It's a bit of a shame not to have run it on real hardware, but I wanted to use the real hardware to solve day 20 instead :). And at least I did most of the implementation on the hardware.
+
+When I came to do part 2, I was already using the hardware to solve part 2 of day 20, so I just wrote the loop to calculate the Manhattan distance in the emulator and ran it in there.
