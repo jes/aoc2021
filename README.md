@@ -23,3 +23,4 @@ You might want to watch these on 2x speed, or not at all.
  * Day 16: https://www.youtube.com/watch?v=r11M5L__qWw
  * Day 18: https://www.youtube.com/watch?v=6wkru5WKi3E
  * Day 20: https://www.youtube.com/watch?v=1bxnUTAnIDs
+ * Day 21: https://www.youtube.com/watch?v=wYFSC3Yj4f0
