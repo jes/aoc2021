@@ -66,17 +66,6 @@ var step = func(ch, horiz) {
 	};
 };
 
-var dump = func() {
-	var x;
-	var y = 0;
-	while (y<h) {
-		x = 0; while (x<w) {
-			putchar(grid[y][x]);
-		x++; };
-	putchar('\n');
-	y++; };
-};
-
 while (moved) {
 	moved = 0;
 	step('>', 1);
